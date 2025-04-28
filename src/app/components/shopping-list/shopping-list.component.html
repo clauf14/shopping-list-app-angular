@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Shopping List</h1>
+  
+    <form (ngSubmit)="editMode ? updateItem() : addItem()">
+      <input
+        type="text"
+        [(ngModel)]="newItem.name"
+        name="name"
+        placeholder="Product name"
+        required
+      />
+      <input
+        type="number"
+        [(ngModel)]="newItem.quantity"
+        name="quantity"
+        placeholder="Quantity"
+        required
+        min="1"
+      />
+      <select [(ngModel)]="newItem.unit" name="unit">
+        <option value="pcs">Pieces</option>
+        <option value="ml">Mililiters</option>
+        <option value="l">Liters</option>
+        <option value="g">Grams</option>
+        <option value="kg">Kilograms</option>
+      </select>
+      <button type="submit">{{ editMode ? 'Update' : 'Add' }}</button>
+    </form>
+  
+    <ul>
+      <ul>
+        <li *ngFor="let item of items">
+          <div class="item-content">
+            <input
+              type="checkbox"
+              [(ngModel)]="item.completed"
+              (change)="toggleCompleted(item)"
+            />
+            <span [class.completed]="item.completed">
+              {{ item.name }} ({{ item.quantity }} {{ item.unit }})
+            </span>
+          </div>
+          <div class="button-group">
+            <button (click)="editItem(item)">Edit</button>
+            <button (click)="deleteItem(item.id)">Delete</button>
+          </div>
+        </li>
+      </ul>      
+    </ul>
+  </div>
+  

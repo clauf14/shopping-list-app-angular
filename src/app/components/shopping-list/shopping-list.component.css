@@ -1,0 +1,84 @@
+/* shopping-list.component.css */
+.container {
+    max-width: 500px;
+    width: 90%;
+    background: #e6e9f0; /* light pastel background */
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(130, 130, 255, 0.3);
+    text-align: center;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  
+  h1 {
+    color: #7b2cbf; /* soft purple */
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+  }
+  
+  input::placeholder {
+    color: #999;
+  }
+  
+  button {
+    padding: 10px;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0); /* purple to deep blue */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* light blue hover */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #dbe2ef; /* very light blue-gray for list items */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li button {
+    background: #7b2cbf;
+    color: white;
+    margin-left: 8px;
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+  
+  li button:hover {
+    background: #5e60ce;
+  }
+  
